@@ -35,6 +35,15 @@ void printArray(int array[], int sz)
     cout << endl;
 }
 
+void heapsort(int array[], int sz)
+{
+    for(int i = sz-1; i >= 0; i--)
+    {
+        swap(array[0], array[i]);
+        heapify(array, i, 0);
+    }
+}
+
 int main(void)
 {
     int n;
@@ -56,6 +65,10 @@ int main(void)
         heapify(array, n, i);
     }
     cout << "After Heapify: ";
+    printArray(array, n);
+
+    heapsort(array, n);
+    cout << "After the HeapSort: ";
     printArray(array, n);
 }
 
